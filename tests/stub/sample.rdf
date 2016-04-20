@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://purl.org/rss/1.0/" 
+    xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+    xmlns:cc="http://web.resource.org/cc/" xml:lang="ja">
+<channel rdf:about="http://blog.fc2.com/newentry.rdf">
+<title>FC2ブログ 新着記事</title>
+<link>http://blog.fc2.com/</link>
+<description>新着記事一覧</description>
+<dc:language>ja</dc:language>
+<items>
+<rdf:Seq>
+<rdf:li rdf:resource="http://keisen87.blog7.fc2.com/blog-entry-970.html" />
+<rdf:li rdf:resource="http://lagrandelue.blog18.fc2.com/blog-entry-4317.html" />
+<rdf:li rdf:resource="http://eroguya.com/blog-entry-522.html" />
+</rdf:Seq>
+</items>
+</channel>
+<item rdf:about="http://keisen87.blog7.fc2.com/blog-entry-970.html">
+<link>http://keisen87.blog7.fc2.com/blog-entry-970.html</link>
+<title> 変わり筆&amp;amp;筆ペン教室 </title>
+<description> 皆さんこんばんは(⌒▽⌒)今日は結工房での変わり筆教室。生徒さんの作 </description>
+<dc:subject> 学問・文化・芸術 </dc:subject>
+<dc:date>2016-04-19T19:33:38+09:00</dc:date>
+<dc:creator> 創作書道家　上田婦佐江オフィシャルブログ【幸せの種】 </dc:creator>
+<dc:publisher>FC2-BLOG</dc:publisher>
+</item>
+<item rdf:about="http://lagrandelue.blog.fc2.com/blog-entry-4317.html">
+<link>http://lagrandelue.blog.fc2.com/blog-entry-4317.html</link>
+<title> 『 CREATOUS MAGAZINE COLLECTION vol.7 』 日時 : 2016.4.22(金) 場所 : 大阪市中央公会堂 開演 : 1部 / 開場 15:00 開演 15:30 2 </title>
+<description> いよいよです！ヨウジヤマモト社の知り合いの方より頑張ってとお声かけ </description>
+<dc:subject> ファッション・ブランド </dc:subject>
+<dc:date>2016-04-19T19:33:08+09:00</dc:date>
+<dc:creator> LA GRANDE LUE オーナー　　 『俺にも言わせろ！』 </dc:creator>
+<dc:publisher>FC2-BLOG</dc:publisher>
+</item>
+<item rdf:about="http://eroguya.com/blog-entry-522.html">
+<link>http://eroguya.com/blog-entry-522.html</link>
+<title> 早起きは無理。 </title>
+<description> フォリッジグリーン行くつもりでしたが起きたとき全然疲れが取れてなか </description>
+<dc:subject> 日記 </dc:subject>
+<dc:date>2016-04-19T19:33:01+09:00</dc:date>
+<dc:creator> 転生・新「人間駄物」伝説 </dc:creator>
+<dc:publisher>FC2-BLOG</dc:publisher>
+</item>
+</rdf:RDF>

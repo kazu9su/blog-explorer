@@ -25,22 +25,13 @@ class RssRetrievalService
         $this->client = $client;
     }
 
+    /**
+     * @return array
+     */
     public function retrieve()
     {
         $response = $this->client->get(self::URL);
-
-        $items = $this->parse($response->getBody()->getContents());
-
-        var_dump($items);
-    }
-
-    /**
-     * @param string $rdfString
-     * @return array
-     */
-    public function parse($rdfString)
-    {
-        $parsed = @simplexml_load_string($rdfString);
+        $parsed = @simplexml_load_string($response->getBody()->getContents());
 
         $items = [];
         foreach ($parsed->item as $item) {
