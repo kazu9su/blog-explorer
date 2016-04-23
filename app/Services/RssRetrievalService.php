@@ -2,7 +2,6 @@
 namespace App\Services;
 
 use App\RssHistory;
-use DB;
 use GuzzleHttp\Client;
 
 /**
@@ -19,18 +18,12 @@ class RssRetrievalService
     protected $client;
 
     /**
-     * @var RssHistory
-     */
-    protected $rssHistory;
-
-    /**
      * RssRetrievalService constructor.
      * @param Client $client
      */
-    public function __construct(Client $client, RssHistory $rssHistory)
+    public function __construct(Client $client)
     {
         $this->client = $client;
-        $this->rssHistory;
     }
 
     /**
@@ -64,20 +57,14 @@ class RssRetrievalService
      */
     public function getUserName($link)
     {
-        //デフォルトフォーマットの場合、サーバ番号を取得できる。
-        //それ以外（おそらく個人でドメインを取得している）の場合、ユーザ名は特定できない
-        if ($this->isDefaultFormat($link)) {
-            $firstBlock = explode('.', $link)[0];
+        $firstBlock = explode('.', $link)[0];
 
-            return explode('//', $firstBlock)[1];
-        } else {
-            return 'Unknown';
-        }
+        return explode('//', $firstBlock)[1]; //個人でドメインを取得している場合は、ドメインをユーザ名とする
     }
 
     /**
      * @param string $link
-     * @return int|string
+     * @return string
      */
     public function getServer($link)
     {
@@ -88,7 +75,7 @@ class RssRetrievalService
 
             return strlen($secondBlock) == 4 ? 0 : substr($secondBlock, 4);
         } else {
-            return 'Unknown';
+            return '00000000001';
         }
     }
 
@@ -121,10 +108,16 @@ class RssRetrievalService
         return preg_match('/^blog/', $blocks[1]) ? true : false;
     }
 
+    /**
+     * @param $items
+     */
     public function saveRssHistory($items)
     {
         foreach ($items as $item) {
-            DB::table('rss_histories')->insert($item);
+            $rssHistory = new RssHistory($item);
+            if (!$rssHistory->exists = $rssHistory->exists()) {
+                $rssHistory->save();
+            }
         }
     }
 }

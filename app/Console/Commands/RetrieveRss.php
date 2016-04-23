@@ -3,7 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Services\RssRetrievalService;
+use DB;
 use Illuminate\Console\Command;
+use Log;
 
 class RetrieveRss extends Command
 {
@@ -46,10 +48,12 @@ class RetrieveRss extends Command
     {
         try {
             $items = $this->retrievalService->retrieve();
-
-            $this->retrievalService->saveRssHistory($items);
+            DB::transaction(function () use ($items) {
+                $this->retrievalService->saveRssHistory($items);
+            });
         } catch (\Exception $e) {
-            var_dump($e->getMessage());
+            Log::error($e->getMessage());
+            Log::error($e->getTrace());
         }
     }
 }
