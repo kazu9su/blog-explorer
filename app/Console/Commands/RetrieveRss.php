@@ -44,7 +44,13 @@ class RetrieveRss extends Command
      */
     public function handle()
     {
-        $this->retrievalService->retrieve();
+        try {
+            $items = $this->retrievalService->retrieve();
+
+            $this->retrievalService->saveRssHistory($items);
+        } catch (\Exception $e) {
+            var_dump($e->getMessage());
+        }
     }
 }
 

@@ -1,6 +1,8 @@
 <?php
 namespace App\Services;
 
+use App\RssHistory;
+use DB;
 use GuzzleHttp\Client;
 
 /**
@@ -17,12 +19,18 @@ class RssRetrievalService
     protected $client;
 
     /**
+     * @var RssHistory
+     */
+    protected $rssHistory;
+
+    /**
      * RssRetrievalService constructor.
      * @param Client $client
      */
-    public function __construct(Client $client)
+    public function __construct(Client $client, RssHistory $rssHistory)
     {
         $this->client = $client;
+        $this->rssHistory;
     }
 
     /**
@@ -111,5 +119,12 @@ class RssRetrievalService
 
         //2番目のブロックが、blogから始まれば、デフォルトフォーマットである
         return preg_match('/^blog/', $blocks[1]) ? true : false;
+    }
+
+    public function saveRssHistory($items)
+    {
+        foreach ($items as $item) {
+            DB::table('rss_histories')->insert($item);
+        }
     }
 }
