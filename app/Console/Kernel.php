@@ -14,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\Inspire::class,
-        'App\Console\Commands\RetrieveRss'
+        'App\Console\Commands\RetrieveRss',
+        'App\Console\Commands\DeleteRss',
     ];
 
     /**
@@ -25,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('inspire')
-                 ->hourly();
+        $schedule->command('rss:retrieve')->everyFiveMinutes();
+        $schedule->command('rss:delete')->daily();
     }
 }
