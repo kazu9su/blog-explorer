@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'RssController@index')->name('index');
+Route::post('/search', 'RssController@search')->name('search');
