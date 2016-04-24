@@ -7,7 +7,7 @@
 #### 推奨(確認ができている)環境
 
 ```vim
-Ubuntu 14.04
+Ubuntu : 14.04
 PHP : 5.5.9
 MySQL : 8.42
 Apache : 2.4.7
