@@ -77,3 +77,8 @@ rootユーザでない場合、 `/etc/crontab`を編集できないので、 `cr
 ```vim
 * * * * * /usr/bin/php /path/to/code/blog-explorer/artisan schedule:run >> /dev/null 2>&1
 ```
+
+### ページの表示
+お疲れ様です!  
+`http://your-site-url-web-directory/blog-explorer/public/`  
+にアクセスしてみてください。FC2のRSS一覧が表示されます。
