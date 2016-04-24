@@ -26,17 +26,18 @@
                 <a href="#demo" data-toggle="collapse">検索</a>
             </div>
             <div id="demo" class="collapse form-group">
+<!--                <form class="" role="search" method="POST" action="/blog-explorer/public/index.php/search"> -->
                 <form class="" role="search" method="POST" action="{{route('search')}}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
                         <label for="datetime">日付</label>
                         <div class="form-inline">
                             <div class="form-group">
-                                <input type="datetime" class="form-control date" data-provide="datepicker" name="from_date" value="{{old('from_date')}}">
+                                <input type="datetime" class="form-control date" data-provide="datepicker" placeholder="mm/dd/yyyy" name="from_date" value="{{old('from_date')}}">
                             </div>
                             ~
                             <div class="form-group">
-                                <input type="datetime" class="form-control date" data-provide="datepicker" name="to_date" value="{{old('to_date')}}">
+                                <input type="datetime" class="form-control date" data-provide="datepicker" placeholder="mm/dd/yyyy" name="to_date" value="{{old('to_date')}}">
                             </div>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                         <input type="number" class="form-control" placeholder="EntryNo. 指定の番号より新しいエントリーを表示します" name="entry_number" value="{{old('entry_number')}}">
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Search</button>
+                        <button type="submit" class="btn btn-primary" value="Search">Search</button>
                     </div>
                 </form>
             </div>
