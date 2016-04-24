@@ -71,7 +71,6 @@ $ php artisan migrate
 ### cronの設定
 以下設定を追加してください。  
 `/path/to/code/` には、任意のベースディレクトリを設定してください。  
-ユーザは `root` でない場合、任意の権限を持ったユーザで設定をしてください。  
 rootユーザでない場合、 `/etc/crontab`を編集できないので、 `crontab -e` コマンドで設定を行ってください。
 
 ```vim
@@ -79,6 +78,6 @@ rootユーザでない場合、 `/etc/crontab`を編集できないので、 `cr
 ```
 
 ### ページの表示
-お疲れ様です!  
+お疲れ様でした!  
 `http://your-site-url-web-directory/blog-explorer/public/`  
 にアクセスしてみてください。FC2のRSS一覧が表示されます。
