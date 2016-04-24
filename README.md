@@ -74,6 +74,6 @@ $ php artisan migrate
 ユーザは `root` でない場合、任意の権限を持ったユーザで設定をしてください。  
 rootユーザでない場合、 `/etc/crontab`を編集できないので、 `crontab -e` コマンドで設定を行ってください。
 
-```crontab
+```vim
 * * * * * /usr/bin/php /path/to/code/blog-explorer/artisan schedule:run >> /dev/null 2>&1
 ```
