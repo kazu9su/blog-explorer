@@ -14,13 +14,13 @@ class CreateRssHistoriesTable extends Migration
     {
         Schema::create('rss_histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title');
-            $table->string('description');
-            $table->string('link');
+            $table->string('title')->default('');
+            $table->string('description')->default('');
+            $table->string('link')->default('');
             $table->timestampTz('date');
-            $table->string('user');
-            $table->string('server');
-            $table->integer('entry_number');
+            $table->string('user')->default('');
+            $table->string('server')->default('');
+            $table->integer('entry_number')->default(0);
             $table->timestamps();
 
             //検索に使うカラムにインデックスを作成
