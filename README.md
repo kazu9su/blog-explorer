@@ -80,3 +80,26 @@ rootユーザでない場合、 `/etc/crontab`を編集できないので、 `cr
 お疲れ様でした!  
 `http://your-site-url-web-directory/blog-explorer/public/`  
 にアクセスしてみてください。FC2のRSS一覧が表示されます。
+
+## タスクの設定
+5分に一回RSSを更新するタスクと、2ヶ月以上古い記事を消すタスクは、  
+[app/Console/Kernel.php](https://github.com/kazu9su/blog-explorer/blob/master/app/Console/Kernel.php)  
+で行っています。  
+設定を変更する場合は[こちら](http://readouble.com/laravel/5/1/ja/scheduling.html)を御覧ください。
+
+## テストについて
+* Notice  
+テストは、実際のテーブルを利用して実行されます。運用開始している環境での実行には十分に注意してください  。
+
+テストは、 下記コマンドで実行できます。
+
+```shell
+$ cd /path/to/code/blog-explorer
+$ ./vendor/bin/phpunit
+```
+
+あるいは、 `make` コマンドがインストールされていれば下記コマンドでもOKです。
+```shell
+$ cd /path/to/code/blog-explorer
+$ make test
+```
