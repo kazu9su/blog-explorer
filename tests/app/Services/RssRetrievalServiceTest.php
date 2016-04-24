@@ -5,12 +5,9 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RssRetrievalServiceTest extends TestCase
 {
-    use DatabaseMigrations;
-
     public function test_get_userName()
     {
         $t = new RssRetrievalService(new Client());

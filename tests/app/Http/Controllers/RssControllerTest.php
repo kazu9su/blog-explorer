@@ -2,12 +2,9 @@
 
 use App\Http\Controllers\RssController;
 use Carbon\Carbon;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RssControllerTest extends TestCase
 {
-    use DatabaseMigrations;
-
     function test_index_view()
     {
         $testNow = Carbon::parse('20160424');
