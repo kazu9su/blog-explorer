@@ -22,6 +22,13 @@ class CreateRssHistoriesTable extends Migration
             $table->string('server');
             $table->integer('entry_number');
             $table->timestamps();
+
+            //検索に使うカラムにインデックスを作成
+            $table->index('link');
+            $table->index('date');
+            $table->index('user');
+            $table->index('server');
+            $table->index('entry_number');
         });
     }
 
