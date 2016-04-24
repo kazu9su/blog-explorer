@@ -63,14 +63,15 @@ $ php artisan migrate
 ### cronの設定
 `/etc/crontab` に以下設定を追加してください。  
 ユーザは `root` でない場合、任意の権限を持ったユーザで設定をしてください。
+`/path/to/code/` には、任意のベースディレクトリを設定してください
 
 * ユーザを指定しない場合
 ```vim
 # この場合、設定を行ったユーザで実行されます。
-* * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
+* * * * * php /path/to/code/blog-explorer/artisan schedule:run >> /dev/null 2>&1
 ```
 
 * ユーザを指定する場合
 ```vim
-* * * * * root php /path/to/artisan schedule:run >> /dev/null 2>&1
+* * * * * root php /path/to/code/blog-explorer/artisan schedule:run >> /dev/null 2>&1
 ```
