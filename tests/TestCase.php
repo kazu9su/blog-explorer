@@ -1,11 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+require_once __DIR__ . '/DatabaseMigrations.php';
 
 class TestCase extends Illuminate\Foundation\Testing\TestCase
 {
     use DatabaseMigrations;
-    
+
     /**
      * The base URL to use while testing the application.
      *
@@ -26,7 +26,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
 
         return $app;
     }
-    
+
     public function tearDown()
     {
         Mockery::close();

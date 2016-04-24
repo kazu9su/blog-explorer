@@ -1,6 +1,5 @@
 <?php
 
-use App\Services\RssRetrievalService;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
@@ -10,7 +9,7 @@ class RssRetrievalServiceTest extends TestCase
 {
     public function test_get_userName()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://meguiruka.blog71.fc2.com/blog-entry-404.html';
 
         $this->assertEquals('meguiruka', $t->getUserName($link));
@@ -18,7 +17,7 @@ class RssRetrievalServiceTest extends TestCase
 
     public function test_get_userName_when_is_not_default_format()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://eroguya.com/blog-entry-522.html';
 
         $this->assertEquals('eroguya', $t->getUserName($link));
@@ -26,7 +25,7 @@ class RssRetrievalServiceTest extends TestCase
 
     public function test_get_server()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://meguiruka.blog71.fc2.com/blog-entry-404.html';
 
         $this->assertEquals('71', $t->getServer($link));
@@ -34,7 +33,7 @@ class RssRetrievalServiceTest extends TestCase
 
     public function test_get_server_when_number_unspecified()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://meguiruka.blog.fc2.com/blog-entry-404.html';
 
         $this->assertEquals(0, $t->getServer($link));
@@ -42,7 +41,7 @@ class RssRetrievalServiceTest extends TestCase
 
     public function test_get_server_when_is_not_default_format()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://eroguya.com/blog-entry-522.html';
 
         $this->assertEquals('', $t->getServer($link));
@@ -50,7 +49,7 @@ class RssRetrievalServiceTest extends TestCase
 
     public function test_get_entryNumber()
     {
-        $t = new RssRetrievalService(new Client());
+        $t = app('App\Services\RssRetrievalService');
         $link = 'http://meguiruka.blog71.fc2.com/blog-entry-404.html';
 
         $this->assertEquals('404', $t->getEntryNumber($link));
@@ -66,7 +65,7 @@ class RssRetrievalServiceTest extends TestCase
         $handler = HandlerStack::create($mock);
         $client = new Client(['handler' => $handler]);
 
-        $t = new RssRetrievalService($client);
+        $t = app('App\Services\RssRetrievalService', [$client]);
 
         $this->assertEquals($t->retrieve(), [
             [
