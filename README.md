@@ -16,6 +16,14 @@ Git : 2.6.4
 
 * このうち、PHPのバージョンは5.5.9以上であることが必須です。
 
+### Laravelについて
+本ソースは、Laravel5.2を元に作成しています。  
+Laravelについては、  
+* [日本語版ドキュメント](http://readouble.com/laravel/5/1/ja/)
+* [本家ドキュメント](https://laravel.com/docs/5.2)
+
+をご参照ください。
+
 ### ソースコードのセットアップ
 
 ```shell
@@ -61,6 +69,8 @@ DB_PASSWORD=test
 ### マイグレーション
 データベースのマイグレーションを行います。  
 以下コマンドを実行するとテーブル、インデックスが作成されます。
+作成するテーブルについての情報は、   [database/migrations/2016_04_23_121050_create_rss_histories_table.php](https://github.com/kazu9su/blog-explorer/blob/master/database/migrations/2016_04_23_121050_create_rss_histories_table.php)  
+を御覧ください。
 
 ```shell
 $ cd /path/to/code/blog-explorer
