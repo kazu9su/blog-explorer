@@ -1,13 +1,11 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
+    "name": "kazu9su/blog-explorer",
+    "description": "FC2のRSSの取得・表示をするウェブサイトを作成できます。",
     "keywords": ["framework", "laravel"],
-    "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
-        "easyrdf/easyrdf": "*",
         "guzzlehttp/guzzle": "6.2.0",
         "nesbot/carbon": "1.21.0"
     },
