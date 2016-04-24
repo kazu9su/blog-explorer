@@ -75,7 +75,7 @@ class RssRetrievalService
 
             return strlen($secondBlock) == 4 ? 0 : substr($secondBlock, 4);
         } else {
-            return '00000000001';
+            return '';
         }
     }
 
