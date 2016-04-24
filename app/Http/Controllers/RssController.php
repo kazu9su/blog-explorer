@@ -21,7 +21,7 @@ class RssController extends Controller
     ];
 
     /**
-     * Display a listing of the resource.
+     * クッキーに保存されている検索条件にしたがってRSSを表示する。
      *
      * @return \Illuminate\Http\Response
      */
@@ -53,9 +53,9 @@ class RssController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 検索条件をクッキーにセットする
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function search(Request $request)
     {
@@ -69,6 +69,7 @@ class RssController extends Controller
                 $response = $response->withCookie(Cookie::forget($condition));
             }
         }
+
         return $response->withInput();
     }
 }
