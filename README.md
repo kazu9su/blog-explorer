@@ -30,18 +30,26 @@ $ ./composer.phar install
 # ログ、キャッシュデュレクトリの権限変更
 $ chmod -R 777 storage/
 $ chmod -R 777 bootstrap/cache/
-
-# アプリケーションのキーを生成
-$ php artisan key:generate
 ```
 
 ### コンフィグ設定
-` .env ` ファイルに使用するデータベース等の情報を設定します。  
+`.env.example` ファイルから、 `.env` を作成してください。  
+その後、アプリケーションのキーを作成するコマンドを実行します。
+`.env`ファイルに、APP_KEYとして設定されます。
+
+```shell
+$ cd /path/to/code/blog-explorer
+$ mv .env.example .env
+$ php artisan key:generate
+```
+
+` .env ` ファイルには、使用するデータベース等の情報を設定します。  
 このうち、データベースの設定は必須です。  
-* 使用するデータベース
+* 使用するデータベースの種類
+* ホスト
 * ユーザ
 * パスワード
-などを任意で変更してください。
+を任意で変更してください。
 
 ```vim
 DB_CONNECTION=mysql
