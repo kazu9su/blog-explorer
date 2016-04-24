@@ -6,7 +6,7 @@
 
 #### 推奨(確認ができている)環境
 
-```
+```vim
 Ubuntu 14.04
 PHP : 5.5.9
 MySQL : 8.42
@@ -18,8 +18,8 @@ Git : 2.6.4
 
 ### ソースコードのセットアップ
 
-```
-# 1. /var/www/htmlなどの、ベースディレクトリ以下に移動し、git cloneを行ってください
+```shell
+# /var/www/htmlなどの、ベースディレクトリ以下に移動し、git cloneを行ってください
 $ cd /path/to/code //move to your base directory
 $ git clone git@github.com:kazu9su/blog-explorer.git
 
@@ -36,11 +36,14 @@ $ php artisan key:generate
 ```
 
 ### コンフィグ設定
-` .env ` ファイルに使用するデータベース等の情報を設定します  
-このうち、データベースの設定は必須です、
-使用するデータベース、データベースのユーザ、パスワードなどを任意で変更してください
+` .env ` ファイルに使用するデータベース等の情報を設定します。  
+このうち、データベースの設定は必須です。  
+* 使用するデータベース
+* ユーザ
+* パスワード
+などを任意で変更してください。
 
-```
+```vim
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_DATABASE=example
@@ -49,25 +52,25 @@ DB_PASSWORD=test
 ```
 
 ### マイグレーション
-データベースのマイグレーションを行います
-以下コマンドを実行するとテーブル、インデックスが作成されます
+データベースのマイグレーションを行います。  
+以下コマンドを実行するとテーブル、インデックスが作成されます。
 
-```
+```shell
 $ cd /path/to/code/blog-explorer
 $ php artisan migrate
 ```
 
 ### cronの設定
-`/etc/crontab` に以下設定を追加してください。
-ユーザは `root` でない場合、任意の権限を持ったユーザで設定をしてください
+`/etc/crontab` に以下設定を追加してください。  
+ユーザは `root` でない場合、任意の権限を持ったユーザで設定をしてください。
 
 * ユーザを指定しない場合
-```
-# この場合、設定を行ったユーザで実行されます
+```vim
+# この場合、設定を行ったユーザで実行されます。
 * * * * * php /path/to/artisan schedule:run >> /dev/null 2>&1
 ```
 
 * ユーザを指定する場合
-```
+```vim
 * * * * * root php /path/to/artisan schedule:run >> /dev/null 2>&1
 ```
