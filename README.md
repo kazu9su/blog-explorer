@@ -88,8 +88,17 @@ rootユーザでない場合、 `/etc/crontab`を編集できないので、 `cr
 
 ### ページの表示
 お疲れ様でした!  
-`http://your-site-url-web-directory/blog-explorer/public/`  
+`http://your-site-url-web-directory/blog-explorer/public/index.php`
 にアクセスしてみてください。FC2のRSS一覧が表示されます。
+
+### index.phpは省略できないのか？
+apacheの設定ファイルで、 `/path/to/code/blog-explorer/public` 以下の ` .htaccess ` の上書きを許可してください。
+
+```vim
+<Directory "/path/to/code/blog-explorer/public">
+    AllowOverride All
+</Directory>
+```
 
 ## タスクの設定
 5分に一回RSSを更新するタスクと、2ヶ月以上古い記事を消すタスクは、  
@@ -98,14 +107,9 @@ rootユーザでない場合、 `/etc/crontab`を編集できないので、 `cr
 設定を変更する場合は[こちら](http://readouble.com/laravel/5/1/ja/scheduling.html)を御覧ください。
 
 ## テストについて
-* Note  
-テストは、実際のテーブルを利用して実行されます。運用開始している環境での実行には十分に注意してください。  
-テスト実行後、同環境で運用を開始する場合は、必ずマイグレーションを再度行ってください。
-
-```shell
-$ cd /path/to/code/blog-explorer
-$ php artisan migrate
-```
+* Note
+テストは、テーブルを初期化します。
+実際のテーブルを利用して実行されますので、運用開始している環境での実行には十分に注意してください。
 
 テストは、 下記コマンドで実行できます。
 
