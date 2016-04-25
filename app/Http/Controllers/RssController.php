@@ -63,7 +63,7 @@ class RssController extends Controller
         if (!is_null($server = $request->cookie('server'))) {
             $this->rssHistory = $this->rssHistory->where('server', "$server");
         }
-        if (!is_null($entryNumber = $request->cookie('from_date'))) {
+        if (!is_null($entryNumber = $request->cookie('entry_number'))) {
             $this->rssHistory = $this->rssHistory->where('entry_number', '>', $entryNumber);
         }
 
