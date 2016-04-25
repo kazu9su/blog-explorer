@@ -26,7 +26,6 @@
                 <a href="#demo" data-toggle="collapse">検索</a>
             </div>
             <div id="demo" class="collapse form-group">
-<!--                <form class="" role="search" method="POST" action="/blog-explorer/public/index.php/search"> -->
                 <form class="" role="search" method="POST" action="{{route('search')}}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
