@@ -101,14 +101,14 @@ apacheの設定ファイルで、 `/path/to/code/blog-explorer/public` 以下の
 ```
 
 ## タスクの設定
-5分に一回RSSを更新するタスクと、2ヶ月以上古い記事を消すタスクは、  
+5分に一回RSSを更新するタスクと、2ヶ月以上古い記事を消すタスクの設定は、  
 [app/Console/Kernel.php](https://github.com/kazu9su/blog-explorer/blob/master/app/Console/Kernel.php)  
 で行っています。  
 設定を変更する場合は[こちら](http://readouble.com/laravel/5/1/ja/scheduling.html)を御覧ください。
 
 ## テストについて
 * Note  
-実際のテーブルを利用して実行されますので、運用開始している環境での実行には十分に注意してください。
+実際のテーブルを利用して実行されますので、運用開始している環境での実行には十分に注意してください。  
 運用開始前には、必ずマイグレーションを再実行して環境を初期化してください。
 
 ```shell
