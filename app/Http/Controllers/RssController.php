@@ -25,6 +25,7 @@ class RssController extends Controller
         'user',
         'server',
         'from_date',
+        'entry_number',
     ];
 
     /**
