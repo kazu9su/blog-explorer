@@ -107,7 +107,7 @@ apacheの設定ファイルで、 `/path/to/code/blog-explorer/public` 以下の
 設定を変更する場合は[こちら](http://readouble.com/laravel/5/1/ja/scheduling.html)を御覧ください。
 
 ## テストについて
-* Note
+* Note  
 テストは、テーブルを初期化します。  
 実際のテーブルを利用して実行されますので、運用開始している環境での実行には十分に注意してください。
 
