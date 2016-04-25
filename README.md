@@ -108,8 +108,14 @@ apacheの設定ファイルで、 `/path/to/code/blog-explorer/public` 以下の
 
 ## テストについて
 * Note  
-テストは、テーブルを初期化します。  
 実際のテーブルを利用して実行されますので、運用開始している環境での実行には十分に注意してください。
+運用開始前には、必ずマイグレーションを再実行して環境を初期化してください。
+
+```shell
+$ cd /path/to/code/blog-explorer
+$ php artisan migrate:rollback
+$ php artisan migrate
+```
 
 テストは、 下記コマンドで実行できます。
 
