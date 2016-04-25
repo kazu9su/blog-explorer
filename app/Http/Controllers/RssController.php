@@ -65,7 +65,7 @@ class RssController extends Controller
             $this->rssHistory = $this->rssHistory->where('server', "$server");
         }
         if (!is_null($entryNumber = $request->cookie('entry_number'))) {
-            $this->rssHistory = $this->rssHistory->where('entry_number', '>', $entryNumber);
+            $this->rssHistory = $this->rssHistory->where('entry_number', '>=', $entryNumber);
         }
 
         $rssHistories = $this->rssHistory->orderBy('date', 'desc')->paginate(10);
